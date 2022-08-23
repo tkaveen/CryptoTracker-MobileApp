@@ -1,12 +1,25 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar } from "expo-status-bar";
+import React from "react";
+import { StyleSheet, Text, View, Image } from "react-native";
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <Image
+        source={{
+          uri: "https://assets.coingecko.com/coins/images/1/large/bitcoin.png",
+        }}
+        style={{ height: 30, width: 30 }}
+      />
+      <View>
+        <Text style={styles.title}>Bitcoin</Text>
+        <View style={{ flexDirection: "row" }}>
+          <Text style={styles.text}>1</Text>
+          <Text style={styles.text}>BTC</Text>
+          <Text style={styles.text}>0.63%</Text>
+        </View>
+      </View>
+      <StatusBar style="light" />
     </View>
   );
 }
@@ -14,8 +27,15 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#121212",
+    paddingTop: 50,
+  },
+  title: {
+    color: "white",
+    fontSize: 16,
+    fontWeight: "bold",
+  },
+  text: {
+    color: "white",
   },
 });
